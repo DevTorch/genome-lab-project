@@ -1,0 +1,42 @@
+name: genome-lab
+channels: [bioconda, conda-forge, pytorch, nvidia]
+dependencies:
+  - python=3.11
+  # --- научный стек ---
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - xarray
+  - h5py
+  - zarr
+  # --- DL / GPU ---
+  - pytorch
+  - torchvision
+  - pytorch-cuda=12.1        # если GPU нет — см. CPU-версию ниже
+  # --- ноутбуки / dev ---
+  - jupyterlab
+  - ipykernel
+  - black
+  - ruff
+  - mypy
+  - pytest
+  # --- MLOps/ускорители ---
+  - lightning
+  - pip
+  - pip:
+      - wandb
+      - hydra-core
+      - omegaconf
+      - pydantic
+  # --- биоинформатика I/O ---
+  - biopython
+  - pysam
+  - pybedtools
+  - cyvcf2
+  - gffutils
+  - pybigwig
+  - bedtools            # CLI для pybedtools
+  # --- 3D-геном / Hi-C ---
+  - cooler
+  - cooltools

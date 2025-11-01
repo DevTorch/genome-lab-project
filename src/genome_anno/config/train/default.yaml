@@ -1,0 +1,7 @@
+# @package train
+batch_size: 32
+lr: 1e-3
+
+trainer:
+  max_epochs: 10
+  precision: 32

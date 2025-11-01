@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "genome-anno"
+version = "0.1.0"
+description = "Research scaffold for genome annotation automation"
+authors = [{name = "Vitaliy"}]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "hydra-core",
+    "omegaconf",
+    "pydantic>=2",
+    "torch",         # фактическая установка GPU/CPU версии через conda/pip в окружении
+    "pytorch-lightning; python_version >= '3.9'",
+    "numpy",
+    "pandas",
+    "biopython",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+line-length = 100
+
+[tool.mypy]
+python_version = "3.11"
+strict = false
+ignore_missing_imports = true
